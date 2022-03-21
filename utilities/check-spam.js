@@ -22,8 +22,8 @@ exports.checkSpam = (comment, ip)=> {
             akismetClient.checkSpam({
                 user_ip : ip,
                 user_agent : comment.get('ua'),
-                referrer : process.env.SITE_URL + comment.get('url'),
-                permalink : process.env.SITE_URL + comment.get('url'),
+                referrer : comment.get('url'),
+                permalink : comment.get('url'),
                 comment_type : 'comment',
                 comment_author : comment.get('nick'),
                 comment_author_email : comment.get('mail'),
@@ -59,8 +59,8 @@ exports.submitSpam = (comment)=> {
             akismetClient.submitSpam({
                 user_ip : ipAddr,
                 user_agent : comment.get('ua'),
-                referrer : process.env.SITE_URL + comment.get('url'),
-                permalink : process.env.SITE_URL + comment.get('url'),
+                referrer : comment.get('url'),
+                permalink : comment.get('url'),
                 comment_type : 'comment',
                 comment_author : comment.get('nick'),
                 comment_author_email : comment.get('mail'),
@@ -87,8 +87,8 @@ exports.submitHam = (comment)=> {
             akismetClient.submitHam({
                 user_ip : ipAddr,
                 user_agent : comment.get('ua'),
-                referrer : process.env.SITE_URL + comment.get('url'),
-                permalink : process.env.SITE_URL + comment.get('url'),
+                referrer : comment.get('url'),
+                permalink : comment.get('url'),
                 comment_type : 'comment',
                 comment_author : comment.get('nick'),
                 comment_author_email : comment.get('mail'),
