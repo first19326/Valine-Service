@@ -45,7 +45,7 @@
                 <span class="spacer">•</span>
                 <a class="red" href="/comments/delete?id=<%= comment_list[i].get('objectId') %>" rel="nofollow">删除</a>
                 <span class="spacer">•</span>
-                <a class="blue" href="<%= process.env.SITE_URL+comment_list[i].get('url')+'#' + comment_list[i].get('objectId') %>" target="_blank" rel="nofollow">查看评论</a>
+                <a class="blue" href="<%= comment_list[i].get('url')+'#' + comment_list[i].get('objectId') %>" target="_blank" rel="nofollow">查看评论</a>
                 <% if (comment_list[i].get('rid')) { %>
                     <% if(comment_list[i].get('isNotified')) { %>
                         <span class="spacer">•</span><span class="vtime">通知已送达</span>
